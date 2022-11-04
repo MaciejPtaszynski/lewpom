@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero.js";
+import Gallery from "./components/Carousel/Gallery";
+import TestModal from "./components/TestModal/TestModal";
+import MediaCard from "./components/MediaCard/MediaCard";
+import DB from "./DataBase/DataBase";
+import Box from "@mui/material/Box";
+
+
+
 
 function App() {
+    const ItemCard = DB.map((item)=>{
+        return <MediaCard
+        key={item.id}
+        title={item.title}
+        description={item.description}
+        price={item.price}
+        isAvailable={item.available}
+        image={item.image}
+        />
+    })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+        <Header/>
+      <Hero/>
+       {/* <Gallery/>*/}
+       {/* <TestModal/>*/}
+       <Box>{DB.map((item)=><MediaCard
+               key={item.id}
+               title={item.title}
+               description={item.description}
+               price={item.price}
+               isAvailable={item.available}
+               image={item.image}
+           />
+       )}</Box>
+
+
+      
     </div>
   );
 }
 
 export default App;
+ 
