@@ -8,6 +8,16 @@ import Typography from '@mui/material/Typography';
 
 
 export default function MediaCard(props) {
+    let priceInfo
+    let color
+    if(props.price<=200){
+        priceInfo="promo";
+        color="red";
+    }
+    else if (props.price>200 && props.price<=500){
+        priceInfo="regular price"; color="blue";
+    }
+    else {priceInfo="xxx"; color="green"}
     return (
         <Card sx={{ maxWidth: 345}}>
             <CardMedia
@@ -24,8 +34,8 @@ export default function MediaCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">{props.price}</Button>
-                <Button size="small">Learn More</Button>
+                <Button sx={{backgroundColor:"green"}} variant={"contained"} size="small">{props.price}</Button>
+                <Button sx={{backgroundColor:color}} size="small">{priceInfo}</Button>
             </CardActions>
         </Card>
     );

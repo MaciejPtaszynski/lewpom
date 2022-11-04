@@ -1,0 +1,11 @@
+.sectionWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.sectionItem {
+    margin: 0 20px;
+}
