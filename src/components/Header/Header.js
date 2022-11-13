@@ -12,6 +12,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Avatar, Modal} from "@mui/material";
 import AvatarImg from"../../assets/pj hard flip.jpeg"
+import TextField from '@mui/material/TextField';
+
 
 
 
@@ -97,7 +99,7 @@ export default function ButtonAppBar() {
                                     color : 'red'
                             }}}/>
                         </IconButton>
-                        <Button sx={{marginLeft: 5}} onClick={openModal} color={header ? "success":"warning"} variant="contained">Rejestracja</Button>
+                        <Button sx={{marginLeft: 5}} onClick={openModal} color={header ? "success":"warning"} variant="contained">ZAPISY</Button>
                     </Box>
                 </Toolbar>
             </header>
@@ -108,12 +110,64 @@ export default function ButtonAppBar() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">Rejestracja uczestnika</Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                     </Typography>
+
+                    <Box component="form" sx={{'& .MuiTextField-root': { m: 1, width: '25ch' },
+                        }} noValidate autoComplete="off">
+                    <div>
+                    <TextField Imię
+                    id="outlined-select-currency"
+                    label="Imię"
+                    defaultValue=""
+                    />
+                    <TextField
+                    Nazwisko
+                    id="outlined-select-currency"
+                    label="Nazwisko"
+                    defaultValue=""
+                    // helperText="Incorrect entry."
+                    />
+                    </div>
+                    <div>
+                    <TextField
+                    error
+                    id="filled-error"
+                    label="Error"
+                    defaultValue="Hello World"
+                    variant="filled"
+                    />
+                    <TextField
+                    error
+                    id="filled-error-helper-text"
+                    label="Error"
+                    defaultValue="Hello World"
+                    helperText="Incorrect entry."
+                    variant="filled"
+                    />
+                    </div>
+                    <div>
+                    <TextField
+                    error
+                    id="standard-error"
+                    label="Error"
+                    defaultValue="Hello World"
+                    variant="standard"
+                    />
+                    <TextField
+                    error
+                    id="standard-error-helper-text"
+                    label="Error"
+                    defaultValue="Hello World"
+                    helperText="Incorrect entry."
+                    variant="standard"
+                    />
+                    </div>
+                    </Box>
+
+
                 </Box>
             </Modal>
          </Box>
